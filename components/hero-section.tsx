@@ -11,7 +11,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger)
 export function HeroSection() {
   const heroRef = useRef<HTMLElement>(null)
   const sunRef = useRef<HTMLImageElement>(null)
-  const mongoRef = useRef<HTMLImageElement>(null)
+  const mongoRef = useRef<HTMLVideoElement>(null)
 
   useGSAP(
     () => {
@@ -130,15 +130,15 @@ export function HeroSection() {
           sizes="(max-width: 768px) 42vw, 28vw"
           className="absolute bottom-0 left-0 z-0 h-[68%] w-auto max-w-none object-contain object-bottom md:h-[78%]"
         />
-        <Image
+        <video
           ref={mongoRef}
-          src="/img/mongo.webp"
-          alt=""
+          src="/img/mongo-fin.webm"
           aria-hidden="true"
-          width={1405}
-          height={2313}
-          sizes="(max-width: 768px) 48vw, 32vw"
           className="absolute right-0 bottom-0 z-20 h-[68%] w-auto max-w-none object-contain object-bottom md:h-[82%]"
+          autoPlay
+          loop
+          muted
+          playsInline
         />
       </div>
     </main>
