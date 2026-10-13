@@ -110,7 +110,7 @@ const faqs = [
 
 export default function Page() {
   return (
-    <main className="bg-[#f7f4ee] text-slate-900">
+    <main className="overflow-x-hidden bg-[#f7f4ee] text-slate-900">
       <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-[#f7f4ee]/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3">
@@ -136,9 +136,9 @@ export default function Page() {
         </div>
       </header>
 
-      <section id="inicio" className="relative overflow-hidden">
+      <section id="inicio" className="relative h-auto min-h-[75vh] w-full overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(41,122,88,0.18),_transparent_38%),radial-gradient(circle_at_bottom_right,_rgba(172,181,96,0.18),_transparent_26%)]" />
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-24">
+        <div className="relative mx-auto grid min-h-screen max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-24">
           <div className="flex flex-col justify-center">
             <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-emerald-200 bg-white/70 px-3 py-1.5 text-xs font-medium text-emerald-800 shadow-sm">
               <Leaf className="h-3.5 w-3.5" />
@@ -234,8 +234,8 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-6 sm:px-6 lg:px-8">
-        <div className="grid gap-4 rounded-[2rem] border border-slate-200 bg-white p-5 shadow-sm md:grid-cols-3">
+      <section className="mx-auto flex h-auto w-full items-center px-4 pb-6 sm:px-6 lg:px-8">
+        <div className="mx-auto grid w-full max-w-7xl gap-4 rounded-[2rem] border border-slate-200 bg-white p-5 shadow-sm md:grid-cols-3">
           {[
             { value: "2.500+", label: "plantas alojadas" },
             { value: "24h", label: "respuesta a reservas" },
@@ -249,31 +249,33 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="como-funciona" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mb-12 text-center">
+      <section id="como-funciona" className="mx-auto flex h-auto w-full items-center px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto w-full max-w-7xl">
+          <div className="mb-12 text-center">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">Cómo funciona</p>
           <h2 className="text-3xl font-black tracking-[-0.05em] text-slate-900 sm:text-4xl">
             Un servicio sencillo para disfrutar de tus vacaciones sin estrés.
           </h2>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {steps.map((step) => (
-            <div key={step.number} className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
-              <div className="mb-5 flex items-center justify-between">
-                <span className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">{step.number}</span>
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#edf5d5] text-sm font-bold text-[#1b6a4a]">
-                  <ChevronRight className="h-4 w-4" />
+          <div className="grid gap-6 md:grid-cols-3">
+            {steps.map((step) => (
+              <div key={step.number} className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
+                <div className="mb-5 flex items-center justify-between">
+                  <span className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">{step.number}</span>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#edf5d5] text-sm font-bold text-[#1b6a4a]">
+                    <ChevronRight className="h-4 w-4" />
+                  </div>
                 </div>
+                <h3 className="text-2xl font-bold text-slate-900">{step.title}</h3>
+                <p className="mt-4 leading-7 text-slate-600">{step.text}</p>
               </div>
-              <h3 className="text-2xl font-bold text-slate-900">{step.title}</h3>
-              <p className="mt-4 leading-7 text-slate-600">{step.text}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      <section id="beneficios" className="bg-[#eef5eb] py-20">
+      <section id="beneficios" className="h-auto w-full bg-[#eef5eb] py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 max-w-2xl">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">Más que un hotel</p>
@@ -319,51 +321,53 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="planes" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mb-12 text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">Planes</p>
-          <h2 className="text-3xl font-black tracking-[-0.05em] text-slate-900 sm:text-4xl">Elige la estancia que mejor encaja con tus plantas.</h2>
-        </div>
+      <section id="planes" className="mx-auto flex h-auto w-full items-center px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto w-full max-w-7xl">
+          <div className="mb-12 text-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">Planes</p>
+            <h2 className="text-3xl font-black tracking-[-0.05em] text-slate-900 sm:text-4xl">Elige la estancia que mejor encaja con tus plantas.</h2>
+          </div>
 
-        <div className="grid gap-6 lg:grid-cols-3">
-          {packages.map((pkg) => (
-            <div
-              key={pkg.name}
-              className={[
-                "rounded-[2rem] border p-6 shadow-sm transition-transform duration-200 hover:-translate-y-1",
-                pkg.featured ? "border-emerald-600 bg-[#1b6a4a] text-white shadow-lg shadow-emerald-900/20" : "border-slate-200 bg-white text-slate-900",
-              ].join(" ")}
-            >
-              <p className={pkg.featured ? "text-emerald-100" : "text-slate-500"}>{pkg.name}</p>
-              <p className="mt-4 text-4xl font-black tracking-[-0.06em]">{pkg.price}</p>
-              <p className={pkg.featured ? "mt-3 text-emerald-50/90" : "mt-3 text-slate-600"}>{pkg.description}</p>
+          <div className="grid gap-6 lg:grid-cols-3">
+            {packages.map((pkg) => (
+              <div
+                key={pkg.name}
+                className={[
+                  "rounded-[2rem] border p-6 shadow-sm transition-transform duration-200 hover:-translate-y-1",
+                  pkg.featured ? "border-emerald-600 bg-[#1b6a4a] text-white shadow-lg shadow-emerald-900/20" : "border-slate-200 bg-white text-slate-900",
+                ].join(" ")}
+              >
+                <p className={pkg.featured ? "text-emerald-100" : "text-slate-500"}>{pkg.name}</p>
+                <p className="mt-4 text-4xl font-black tracking-[-0.06em]">{pkg.price}</p>
+                <p className={pkg.featured ? "mt-3 text-emerald-50/90" : "mt-3 text-slate-600"}>{pkg.description}</p>
 
-              <ul className={pkg.featured ? "mt-6 space-y-3 text-emerald-50" : "mt-6 space-y-3 text-slate-700"}>
-                {pkg.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-3">
-                    <span
-                      className={
-                        pkg.featured
-                          ? "flex h-6 w-6 items-center justify-center rounded-full bg-emerald-200 text-emerald-900"
-                          : "flex h-6 w-6 items-center justify-center rounded-full bg-[#edf5d5] text-[#1b6a4a]"
-                      }
-                    >
-                      <Check className="h-4 w-4" />
-                    </span>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
+                <ul className={pkg.featured ? "mt-6 space-y-3 text-emerald-50" : "mt-6 space-y-3 text-slate-700"}>
+                  {pkg.features.map((feature) => (
+                    <li key={feature} className="flex items-center gap-3">
+                      <span
+                        className={
+                          pkg.featured
+                            ? "flex h-6 w-6 items-center justify-center rounded-full bg-emerald-200 text-emerald-900"
+                            : "flex h-6 w-6 items-center justify-center rounded-full bg-[#edf5d5] text-[#1b6a4a]"
+                        }
+                      >
+                        <Check className="h-4 w-4" />
+                      </span>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
 
-              <Button className={pkg.featured ? "mt-8 w-full rounded-full bg-white text-[#1b6a4a] hover:bg-emerald-50" : "mt-8 w-full rounded-full bg-[#1b6a4a] text-white hover:bg-[#14573b]"}>
-                Reservar
-              </Button>
-            </div>
-          ))}
+                <Button className={pkg.featured ? "mt-8 w-full rounded-full bg-white text-[#1b6a4a] hover:bg-emerald-50" : "mt-8 w-full rounded-full bg-[#1b6a4a] text-white hover:bg-[#14573b]"}>
+                  Reservar
+                </Button>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="bg-[#f2efe8] py-20">
+      <section className="h-auto w-full bg-[#f2efe8] py-20">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
           <div>
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">Por qué elegirnos</p>
@@ -424,31 +428,33 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="opiniones" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mb-12 text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">Opiniones</p>
-          <h2 className="text-3xl font-black tracking-[-0.05em] text-slate-900 sm:text-4xl">La tranquilidad de quienes se fueron y las devolvieron felices.</h2>
-        </div>
+      <section id="opiniones" className="mx-auto flex h-auto w-full items-center px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto w-full max-w-7xl">
+          <div className="mb-12 text-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">Opiniones</p>
+            <h2 className="text-3xl font-black tracking-[-0.05em] text-slate-900 sm:text-4xl">La tranquilidad de quienes se fueron y las devolvieron felices.</h2>
+          </div>
 
-        <div className="grid gap-6 lg:grid-cols-3">
-          {testimonials.map((item) => (
-            <div key={item.author} className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
-              <div className="mb-4 flex gap-1 text-amber-400">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-current" />
-                ))}
+          <div className="grid gap-6 lg:grid-cols-3">
+            {testimonials.map((item) => (
+              <div key={item.author} className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
+                <div className="mb-4 flex gap-1 text-amber-400">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-current" />
+                  ))}
+                </div>
+                <p className="text-lg leading-8 text-slate-700">“{item.quote}”</p>
+                <div className="mt-6 border-t border-slate-200 pt-4">
+                  <p className="font-bold text-slate-900">{item.author}</p>
+                  <p className="text-sm text-slate-500">{item.detail}</p>
+                </div>
               </div>
-              <p className="text-lg leading-8 text-slate-700">“{item.quote}”</p>
-              <div className="mt-6 border-t border-slate-200 pt-4">
-                <p className="font-bold text-slate-900">{item.author}</p>
-                <p className="text-sm text-slate-500">{item.detail}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      <section id="faq" className="bg-[#f4f8f0] py-20">
+      <section id="faq" className="h-auto w-full bg-[#f4f8f0] py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10 text-center">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">FAQ</p>
@@ -472,8 +478,8 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="cta" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <div className="rounded-[2.5rem] bg-[linear-gradient(135deg,#173e2f_0%,#1b6a4a_45%,#6d8b3d_100%)] p-8 text-white shadow-[0_30px_70px_rgba(23,62,47,0.28)] sm:p-10 lg:p-14">
+      <section id="cta" className="mx-auto flex h-auto w-full items-center px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto w-full max-w-7xl rounded-[2.5rem] bg-[linear-gradient(135deg,#173e2f_0%,#1b6a4a_45%,#6d8b3d_100%)] p-8 text-white shadow-[0_30px_70px_rgba(23,62,47,0.28)] sm:p-10 lg:p-14">
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-100">Reserva tu plaza</p>
