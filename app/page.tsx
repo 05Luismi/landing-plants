@@ -11,8 +11,9 @@ import {
   Star,
   SunMedium,
 } from "lucide-react"
+import Image from "next/image"
 
-import { Button } from "@/components/ui/button"
+import { ReservationForm } from "@/components/reservation-form"
 
 const benefitPoints = [
   "Recogida a domicilio sin complicarte la vida",
@@ -113,14 +114,14 @@ export default function Page() {
     <main className="overflow-x-hidden bg-[#f7f4ee] text-slate-900">
       <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-[#f7f4ee]/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3">
+          <a href="#inicio" aria-label="Hotel by Plants, inicio" className="flex items-center gap-3 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1b6a4a]">
             <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#1b6a4a] text-lg font-bold text-white shadow-md shadow-emerald-900/20">
               H
             </div>
             <div>
               <p className="text-lg font-semibold tracking-tight">Hotel by Plants</p>
             </div>
-          </div>
+          </a>
 
           <nav className="hidden items-center gap-8 text-sm text-slate-700 md:flex">
             <a href="#como-funciona">Cómo funciona</a>
@@ -130,14 +131,15 @@ export default function Page() {
             <a href="#faq">FAQ</a>
           </nav>
 
-          <Button className="rounded-full bg-[#1b6a4a] px-5 text-sm font-semibold text-white hover:bg-[#14573b]">
+          <a href="#reserva" className="rounded-full bg-[#1b6a4a] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#14573b]">
             Reservar ahora
-          </Button>
+          </a>
         </div>
       </header>
 
       <section id="inicio" className="relative h-auto min-h-[75vh] w-full overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(41,122,88,0.18),_transparent_38%),radial-gradient(circle_at_bottom_right,_rgba(172,181,96,0.18),_transparent_26%)]" />
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url("/img/fondo%20de%20hero.webp")' }} />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#f7f4ee]/95 via-[#f7f4ee]/75 to-[#f7f4ee]/35" />
         <div className="relative mx-auto grid min-h-screen max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-24">
           <div className="flex flex-col justify-center">
             <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-emerald-200 bg-white/70 px-3 py-1.5 text-xs font-medium text-emerald-800 shadow-sm">
@@ -155,13 +157,13 @@ export default function Page() {
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <Button className="rounded-full bg-[#1b6a4a] px-6 py-6 text-base font-semibold text-white hover:bg-[#14573b]">
+              <a href="#reserva" className="inline-flex items-center justify-center rounded-full bg-[#1b6a4a] px-6 py-4 text-base font-semibold text-white transition hover:bg-[#14573b]">
                 Solicitar estancia
                 <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button variant="outline" className="rounded-full border-slate-300 bg-white/80 px-6 py-6 text-base font-semibold text-slate-700 hover:bg-slate-50">
+              </a>
+              <a href="#planes" className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white/80 px-6 py-4 text-base font-semibold text-slate-700 transition hover:bg-slate-50">
                 Ver planes
-              </Button>
+              </a>
             </div>
 
             <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-slate-600">
@@ -245,6 +247,27 @@ export default function Page() {
               <p className="text-3xl font-black text-[#1b6a4a]">{item.value}</p>
               <p className="mt-1 text-sm text-slate-600">{item.label}</p>
             </div>
+          ))}
+        </div>
+      </section>
+
+      <section aria-label="Nuestro espacio para plantas" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">Un hogar lleno de verde</p>
+            <h2 className="text-3xl font-black tracking-[-0.05em] text-slate-900">Un espacio pensado para que estén a gusto.</h2>
+          </div>
+          <a href="#reserva" className="w-fit font-semibold text-[#1b6a4a] underline underline-offset-4">Reserva una estancia <ArrowRight className="ml-1 inline h-4 w-4" /></a>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-3">
+          {[
+            { src: "/img/plant.webp", alt: "Plantas cuidadas en un espacio luminoso" },
+            { src: "/img/plante.webp", alt: "Plantas de interior durante su estancia" },
+            { src: "/img/plant_1.webp", alt: "Un rincón verde preparado para las plantas" },
+          ].map((image) => (
+            <figure key={image.src} className="group overflow-hidden rounded-[1.75rem] bg-white shadow-sm">
+              <Image src={image.src} alt={image.alt} width={720} height={480} sizes="(max-width: 640px) 100vw, 33vw" className="h-64 w-full object-cover transition duration-500 group-hover:scale-105" />
+            </figure>
           ))}
         </div>
       </section>
@@ -358,9 +381,9 @@ export default function Page() {
                   ))}
                 </ul>
 
-                <Button className={pkg.featured ? "mt-8 w-full rounded-full bg-white text-[#1b6a4a] hover:bg-emerald-50" : "mt-8 w-full rounded-full bg-[#1b6a4a] text-white hover:bg-[#14573b]"}>
+                <a href="#reserva" className={`mt-8 inline-flex w-full items-center justify-center rounded-full px-5 py-3 font-semibold transition ${pkg.featured ? "bg-white text-[#1b6a4a] hover:bg-emerald-50" : "bg-[#1b6a4a] text-white hover:bg-[#14573b]"}`}>
                   Reservar
-                </Button>
+                </a>
               </div>
             ))}
           </div>
@@ -478,6 +501,17 @@ export default function Page() {
         </div>
       </section>
 
+      <section id="reserva" className="mx-auto w-full max-w-5xl scroll-mt-24 px-4 py-20 sm:px-6 lg:px-8">
+        <div className="rounded-[2.5rem] border border-emerald-100 bg-white p-6 shadow-xl shadow-emerald-900/5 sm:p-10">
+          <div className="mb-8 max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">Reserva tu plaza</p>
+            <h2 className="mt-3 text-3xl font-black tracking-[-0.06em] text-slate-900 sm:text-4xl">Cuéntanos cuándo cuidamos de tus plantas.</h2>
+            <p className="mt-3 leading-7 text-slate-600">Completa los datos y revisa el precio orientativo. Prepararemos el mensaje en tu aplicación de correo para que puedas enviarlo.</p>
+          </div>
+          <ReservationForm />
+        </div>
+      </section>
+
       <section id="cta" className="mx-auto flex h-auto w-full items-center px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto w-full max-w-7xl rounded-[2.5rem] bg-[linear-gradient(135deg,#173e2f_0%,#1b6a4a_45%,#6d8b3d_100%)] p-8 text-white shadow-[0_30px_70px_rgba(23,62,47,0.28)] sm:p-10 lg:p-14">
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
@@ -486,12 +520,12 @@ export default function Page() {
               <h2 className="mt-3 max-w-xl text-3xl font-black tracking-[-0.06em] sm:text-4xl">Deja tus plantas en manos expertas y disfruta del viaje sin preocupaciones.</h2>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-              <Button className="rounded-full bg-white px-6 py-6 text-base font-semibold text-[#1b6a4a] hover:bg-emerald-50">
+              <a href="#reserva" className="inline-flex items-center justify-center rounded-full bg-white px-6 py-4 text-base font-semibold text-[#1b6a4a] transition hover:bg-emerald-50">
                 Solicitar información
-              </Button>
-              <Button variant="outline" className="rounded-full border-white/40 bg-white/5 px-6 py-6 text-base font-semibold text-white hover:bg-white/10">
+              </a>
+              <a href="#reserva" className="inline-flex items-center justify-center rounded-full border border-white/40 bg-white/5 px-6 py-4 text-base font-semibold text-white transition hover:bg-white/10">
                 Hablar con nosotros
-              </Button>
+              </a>
             </div>
           </div>
         </div>
