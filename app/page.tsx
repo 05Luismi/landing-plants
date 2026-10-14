@@ -140,12 +140,12 @@ export default function Page() {
         </div>
       </header>
 
-      <section id="inicio" className="relative h-auto min-h-[68svh] w-full overflow-hidden">
+      <section id="inicio" className="relative h-auto min-h-[70svh] w-full overflow-hidden">
         <video autoPlay muted loop playsInline preload="metadata" poster="/img/fondo%20de%20hero.webp" aria-hidden="true" tabIndex={-1} className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden">
           <source src="/img/video/paisaje1.webm" type="video/webm" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-[#f0f2e9]/90 via-[#f0f2e9]/65 to-[#f0f2e9]/25" />
-        <div className="relative mx-auto grid min-h-[68svh] max-w-7xl gap-10 sm:min-h-[72svh] lg:min-h-[clamp(34rem,72svh,45rem)] px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 lg:px-8 lg:py-20">
+        <div className="relative mx-auto grid min-h-[70svh] max-w-7xl gap-10 sm:min-h-[76svh] lg:min-h-[clamp(38rem,84svh,54rem)] px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 lg:px-8 lg:py-20">
           <div className="flex flex-col justify-center">
             <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-emerald-200 bg-white/75 px-3 py-1.5 text-xs font-medium text-emerald-800 shadow-sm">
               <Leaf className="h-3.5 w-3.5" />
