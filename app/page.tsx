@@ -112,6 +112,23 @@ const faqs = [
   "¿Cuánto dura la estancia típica?",
 ]
 
+const galleryImages: Array<{
+  src: string
+  alt: string
+  credit?: string
+  creditUrl?: string
+}> = [
+  { src: "/img/plant.webp", alt: "Plantas cuidadas en un espacio luminoso" },
+  { src: "/img/plante.webp", alt: "Plantas de interior durante su estancia" },
+  { src: "/img/plant_1.webp", alt: "Un rincón verde preparado para las plantas" },
+  {
+    src: "/img/greenhouse.webp",
+    alt: "Un invernadero luminoso lleno de plantas",
+    credit: "Keith Mapeki / Unsplash",
+    creditUrl: "https://unsplash.com/photos/a-bunch-of-plants-that-are-in-a-house-V5gqoJFhclM",
+  },
+]
+
 export default function Page() {
   return (
     <>
@@ -276,15 +293,18 @@ export default function Page() {
             Reserva una estancia <ArrowRight className="ml-1 h-4 w-4" />
           </ReservationButton>
         </div>
-        <div className="grid gap-4 sm:grid-cols-3">
-          {[
-            { src: "/img/plant.webp", alt: "Plantas cuidadas en un espacio luminoso" },
-            { src: "/img/plante.webp", alt: "Plantas de interior durante su estancia" },
-            { src: "/img/plant_1.webp", alt: "Un rincón verde preparado para las plantas" },
-          ].map((image) => (
-            <a key={image.src} href={image.src} target="_blank" rel="noreferrer" aria-label={`Abrir imagen: ${image.alt}`} className="group block overflow-hidden rounded-[1.75rem] bg-white shadow-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1b6a4a]">
-              <Image src={image.src} alt={image.alt} width={720} height={480} sizes="(max-width: 640px) 100vw, 33vw" className="h-64 w-full object-cover transition duration-500 group-hover:scale-105" />
-            </a>
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          {galleryImages.map((image) => (
+            <figure key={image.src} className="overflow-hidden rounded-[1.75rem] bg-white shadow-sm">
+              <a href={image.src} target="_blank" rel="noreferrer" aria-label={`Abrir imagen: ${image.alt}`} className="group block overflow-hidden focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-[#1b6a4a]">
+                <Image src={image.src} alt={image.alt} width={720} height={480} sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw" className="h-64 w-full object-cover transition duration-500 group-hover:scale-105" />
+              </a>
+              {image.credit && image.creditUrl && (
+                <figcaption className="px-4 py-3 text-xs text-slate-500">
+                  Foto de <a href={image.creditUrl} target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-[#1b6a4a]">{image.credit}</a>
+                </figcaption>
+              )}
+            </figure>
           ))}
         </div>
       </section>
