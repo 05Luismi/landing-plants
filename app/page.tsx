@@ -14,6 +14,9 @@ import {
 import Image from "next/image"
 
 import { ReservationForm } from "@/components/reservation-form"
+import { ReservationButton } from "@/components/reservation-button"
+import { ReservationRain } from "@/components/reservation-rain"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 const benefitPoints = [
   "Recogida a domicilio sin complicarte la vida",
@@ -111,6 +114,7 @@ const faqs = [
 
 export default function Page() {
   return (
+    <>
     <main className="overflow-x-hidden bg-[#f7f4ee] text-slate-900">
       <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-[#f7f4ee]/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
@@ -131,9 +135,20 @@ export default function Page() {
             <a href="#faq">FAQ</a>
           </nav>
 
-          <a href="#reserva" className="rounded-full bg-[#1b6a4a] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#14573b]">
+          <details className="group relative md:hidden">
+            <summary className="cursor-pointer list-none rounded-full border border-emerald-900/15 bg-white/80 px-4 py-2 text-sm font-semibold text-[#1b6a4a] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1b6a4a]">Menú</summary>
+            <nav className="absolute right-0 top-full mt-3 grid min-w-48 gap-1 rounded-2xl border border-slate-200 bg-white p-2 text-sm text-slate-700 shadow-xl">
+              <a className="rounded-xl px-3 py-2 hover:bg-emerald-50" href="#como-funciona">Cómo funciona</a>
+              <a className="rounded-xl px-3 py-2 hover:bg-emerald-50" href="#beneficios">Beneficios</a>
+              <a className="rounded-xl px-3 py-2 hover:bg-emerald-50" href="#planes">Planes</a>
+              <a className="rounded-xl px-3 py-2 hover:bg-emerald-50" href="#opiniones">Opiniones</a>
+              <a className="rounded-xl px-3 py-2 hover:bg-emerald-50" href="#faq">Preguntas frecuentes</a>
+            </nav>
+          </details>
+
+          <ReservationButton className="h-auto rounded-full bg-[#1b6a4a] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#14573b]">
             Reservar ahora
-          </a>
+          </ReservationButton>
         </div>
       </header>
 
@@ -157,10 +172,10 @@ export default function Page() {
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <a href="#reserva" className="inline-flex items-center justify-center rounded-full bg-[#1b6a4a] px-6 py-4 text-base font-semibold text-white transition hover:bg-[#14573b]">
+              <ReservationButton className="h-auto rounded-full bg-[#1b6a4a] px-6 py-4 text-base font-semibold text-white hover:bg-[#14573b]">
                 Solicitar estancia
                 <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
+              </ReservationButton>
               <a href="#planes" className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white/80 px-6 py-4 text-base font-semibold text-slate-700 transition hover:bg-slate-50">
                 Ver planes
               </a>
@@ -257,7 +272,9 @@ export default function Page() {
             <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">Un hogar lleno de verde</p>
             <h2 className="text-3xl font-black tracking-[-0.05em] text-slate-900">Un espacio pensado para que estén a gusto.</h2>
           </div>
-          <a href="#reserva" className="w-fit font-semibold text-[#1b6a4a] underline underline-offset-4">Reserva una estancia <ArrowRight className="ml-1 inline h-4 w-4" /></a>
+          <ReservationButton className="h-auto w-fit justify-start bg-transparent p-0 text-sm font-semibold text-[#1b6a4a] shadow-none underline underline-offset-4 hover:bg-transparent">
+            Reserva una estancia <ArrowRight className="ml-1 h-4 w-4" />
+          </ReservationButton>
         </div>
         <div className="grid gap-4 sm:grid-cols-3">
           {[
@@ -265,9 +282,9 @@ export default function Page() {
             { src: "/img/plante.webp", alt: "Plantas de interior durante su estancia" },
             { src: "/img/plant_1.webp", alt: "Un rincón verde preparado para las plantas" },
           ].map((image) => (
-            <figure key={image.src} className="group overflow-hidden rounded-[1.75rem] bg-white shadow-sm">
+            <a key={image.src} href={image.src} target="_blank" rel="noreferrer" aria-label={`Abrir imagen: ${image.alt}`} className="group block overflow-hidden rounded-[1.75rem] bg-white shadow-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1b6a4a]">
               <Image src={image.src} alt={image.alt} width={720} height={480} sizes="(max-width: 640px) 100vw, 33vw" className="h-64 w-full object-cover transition duration-500 group-hover:scale-105" />
-            </figure>
+            </a>
           ))}
         </div>
       </section>
@@ -283,16 +300,18 @@ export default function Page() {
 
           <div className="grid gap-6 md:grid-cols-3">
             {steps.map((step) => (
-              <div key={step.number} className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
-                <div className="mb-5 flex items-center justify-between">
+              <Card key={step.number} className="h-full rounded-[2rem] border-0 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+                <CardHeader className="p-0">
+                  <div className="mb-5 flex items-center justify-between">
                   <span className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">{step.number}</span>
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#edf5d5] text-sm font-bold text-[#1b6a4a]">
                     <ChevronRight className="h-4 w-4" />
                   </div>
-                </div>
-                <h3 className="text-2xl font-bold text-slate-900">{step.title}</h3>
-                <p className="mt-4 leading-7 text-slate-600">{step.text}</p>
-              </div>
+                  </div>
+                  <CardTitle className="text-2xl font-bold text-slate-900">{step.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="p-0 leading-7 text-slate-600">{step.text}</CardContent>
+              </Card>
             ))}
           </div>
         </div>
@@ -330,13 +349,13 @@ export default function Page() {
               {reasons.map((reason) => {
                 const Icon = reason.icon
                 return (
-                  <div key={reason.title} className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
+                  <Card key={reason.title} className="h-full rounded-[2rem] border-0 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#edf5d5] text-[#1b6a4a]">
                       <Icon className="h-6 w-6" />
                     </div>
-                    <h3 className="mt-5 text-xl font-bold text-slate-900">{reason.title}</h3>
-                    <p className="mt-3 leading-7 text-slate-600">{reason.text}</p>
-                  </div>
+                    <CardHeader className="p-0 pt-3"><CardTitle className="text-xl font-bold text-slate-900">{reason.title}</CardTitle></CardHeader>
+                    <CardContent className="p-0 leading-7 text-slate-600">{reason.text}</CardContent>
+                  </Card>
                 )
               })}
             </div>
@@ -353,10 +372,10 @@ export default function Page() {
 
           <div className="grid gap-6 lg:grid-cols-3">
             {packages.map((pkg) => (
-              <div
+              <Card
                 key={pkg.name}
                 className={[
-                  "rounded-[2rem] border p-6 shadow-sm transition-transform duration-200 hover:-translate-y-1",
+                  "h-full rounded-[2rem] border-0 p-6 shadow-sm ring-0 transition duration-300 hover:-translate-y-1 hover:shadow-xl",
                   pkg.featured ? "border-emerald-600 bg-[#1b6a4a] text-white shadow-lg shadow-emerald-900/20" : "border-slate-200 bg-white text-slate-900",
                 ].join(" ")}
               >
@@ -381,10 +400,10 @@ export default function Page() {
                   ))}
                 </ul>
 
-                <a href="#reserva" className={`mt-8 inline-flex w-full items-center justify-center rounded-full px-5 py-3 font-semibold transition ${pkg.featured ? "bg-white text-[#1b6a4a] hover:bg-emerald-50" : "bg-[#1b6a4a] text-white hover:bg-[#14573b]"}`}>
+                <ReservationButton className={`mt-8 h-auto w-full rounded-full px-5 py-3 font-semibold ${pkg.featured ? "bg-white text-[#1b6a4a] hover:bg-emerald-50" : "bg-[#1b6a4a] text-white hover:bg-[#14573b]"}`}>
                   Reservar
-                </a>
-              </div>
+                </ReservationButton>
+              </Card>
             ))}
           </div>
         </div>
@@ -460,7 +479,7 @@ export default function Page() {
 
           <div className="grid gap-6 lg:grid-cols-3">
             {testimonials.map((item) => (
-              <div key={item.author} className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
+              <Card key={item.author} className="h-full rounded-[2rem] border-0 bg-white p-6 shadow-sm ring-0 transition duration-300 hover:-translate-y-1 hover:shadow-lg">
                 <div className="mb-4 flex gap-1 text-amber-400">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star key={i} className="h-4 w-4 fill-current" />
@@ -471,7 +490,7 @@ export default function Page() {
                   <p className="font-bold text-slate-900">{item.author}</p>
                   <p className="text-sm text-slate-500">{item.detail}</p>
                 </div>
-              </div>
+              </Card>
             ))}
           </div>
         </div>
@@ -502,14 +521,14 @@ export default function Page() {
       </section>
 
       <section id="reserva" className="mx-auto w-full max-w-5xl scroll-mt-24 px-4 py-20 sm:px-6 lg:px-8">
-        <div className="rounded-[2.5rem] border border-emerald-100 bg-white p-6 shadow-xl shadow-emerald-900/5 sm:p-10">
+        <Card className="rounded-[2.5rem] border border-emerald-100 bg-white p-6 shadow-xl shadow-emerald-900/5 ring-0 sm:p-10">
           <div className="mb-8 max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">Reserva tu plaza</p>
             <h2 className="mt-3 text-3xl font-black tracking-[-0.06em] text-slate-900 sm:text-4xl">Cuéntanos cuándo cuidamos de tus plantas.</h2>
             <p className="mt-3 leading-7 text-slate-600">Completa los datos y revisa el precio orientativo. Prepararemos el mensaje en tu aplicación de correo para que puedas enviarlo.</p>
           </div>
           <ReservationForm />
-        </div>
+        </Card>
       </section>
 
       <section id="cta" className="mx-auto flex h-auto w-full items-center px-4 py-20 sm:px-6 lg:px-8">
@@ -520,12 +539,12 @@ export default function Page() {
               <h2 className="mt-3 max-w-xl text-3xl font-black tracking-[-0.06em] sm:text-4xl">Deja tus plantas en manos expertas y disfruta del viaje sin preocupaciones.</h2>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-              <a href="#reserva" className="inline-flex items-center justify-center rounded-full bg-white px-6 py-4 text-base font-semibold text-[#1b6a4a] transition hover:bg-emerald-50">
+              <ReservationButton className="h-auto rounded-full bg-white px-6 py-4 text-base font-semibold text-[#1b6a4a] hover:bg-emerald-50">
                 Solicitar información
-              </a>
-              <a href="#reserva" className="inline-flex items-center justify-center rounded-full border border-white/40 bg-white/5 px-6 py-4 text-base font-semibold text-white transition hover:bg-white/10">
+              </ReservationButton>
+              <ReservationButton className="h-auto rounded-full border-white/40 bg-white/5 px-6 py-4 text-base font-semibold text-white hover:bg-white/10">
                 Hablar con nosotros
-              </a>
+              </ReservationButton>
             </div>
           </div>
         </div>
@@ -547,5 +566,7 @@ export default function Page() {
         </div>
       </footer>
     </main>
+      <ReservationRain />
+    </>
   )
 }

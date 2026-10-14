@@ -27,6 +27,27 @@
   animation: hero-colors-left 18s linear infinite;
 }
 
+.cannabis-rain-leaf {
+  animation-name: cannabis-rain-fall;
+  animation-timing-function: ease-in;
+  animation-fill-mode: both;
+  will-change: transform, opacity;
+}
+
+@keyframes cannabis-rain-fall {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -12vh, 0) rotate(0deg);
+  }
+  8% {
+    opacity: 0.92;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--leaf-sway), 112vh, 0) rotate(var(--leaf-spin));
+  }
+}
+
 @keyframes hero-colors-left {
   to {
     background-position: 100% 50%;
@@ -36,6 +57,11 @@
 @media (prefers-reduced-motion: reduce) {
   .hero-background {
     animation: none;
+  }
+  .cannabis-rain-leaf {
+    --leaf-sway: 0px !important;
+    --leaf-spin: 0deg !important;
+    animation-duration: 1.2s !important;
   }
 }
 

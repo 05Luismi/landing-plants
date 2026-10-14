@@ -2,6 +2,8 @@
 
 import { useState, type FormEvent } from "react"
 
+import { Button } from "@/components/ui/button"
+
 const plans = [
   { name: "Estancia breve", price: 19 },
   { name: "Estancia completa", price: 39 },
@@ -26,6 +28,7 @@ export function ReservationForm() {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    window.dispatchEvent(new Event("hotelbyplants:reserve"))
     const formData = new FormData(event.currentTarget)
     const details = [
       `Nombre: ${formData.get("name")}`,
@@ -83,9 +86,9 @@ export function ReservationForm() {
           Desde <strong className="text-lg text-[#1b6a4a]">{estimate} €</strong>
           <span className="block text-xs">El precio final depende de la cantidad, duración y cuidados.</span>
         </p>
-        <button type="submit" className="inline-flex items-center justify-center rounded-full bg-[#1b6a4a] px-6 py-3 font-semibold text-white transition hover:bg-[#14573b] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1b6a4a]">
+        <Button type="submit" className="h-auto rounded-full bg-[#1b6a4a] px-6 py-3 font-semibold text-white hover:bg-[#14573b]">
           Preparar solicitud
-        </button>
+        </Button>
       </div>
       <p className="text-xs leading-5 text-slate-500 md:col-span-2">
         Se abrirá tu aplicación de correo con estos datos. Añade el correo de contacto del hotel y envía la solicitud.
