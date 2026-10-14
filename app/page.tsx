@@ -141,8 +141,10 @@ export default function Page() {
       </header>
 
       <section id="inicio" className="relative h-auto min-h-[75vh] w-full overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url("/img/fondo%20de%20hero.webp")' }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#f0f2e9]/95 via-[#f0f2e9]/75 to-[#f0f2e9]/35" />
+        <video autoPlay muted loop playsInline preload="metadata" poster="/img/fondo%20de%20hero.webp" aria-hidden="true" tabIndex={-1} className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden">
+          <source src="/img/video/paisaje1.webm" type="video/webm" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#f0f2e9]/90 via-[#f0f2e9]/65 to-[#f0f2e9]/25" />
         <div className="relative mx-auto grid min-h-[85svh] max-w-7xl gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 lg:px-8 lg:py-20">
           <div className="flex flex-col justify-center">
             <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-emerald-200 bg-white/75 px-3 py-1.5 text-xs font-medium text-emerald-800 shadow-sm">
@@ -316,8 +318,12 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="beneficios" className="h-auto w-full bg-[#e6ece2] py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section id="beneficios" className="relative isolate h-auto w-full overflow-hidden bg-[#e6ece2] py-20">
+        <video autoPlay muted loop playsInline preload="none" poster="/img/plant_3.webp" aria-hidden="true" tabIndex={-1} className="absolute inset-0 h-full w-full object-cover opacity-80 motion-reduce:hidden">
+          <source src="/img/video/jardin.webm" type="video/webm" />
+        </video>
+        <div className="absolute inset-0 bg-[#e6ece2]/75" aria-hidden="true" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 max-w-2xl">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">Más que un hotel</p>
             <h2 className="text-3xl font-black tracking-[-0.05em] text-slate-900 sm:text-4xl">
@@ -408,8 +414,12 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="h-auto w-full bg-[#e9ece4] py-20">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
+      <section className="relative isolate h-auto w-full overflow-hidden bg-[#e9ece4] py-20">
+        <video autoPlay muted loop playsInline preload="none" poster="/img/plant_4.webp" aria-hidden="true" tabIndex={-1} className="absolute inset-0 h-full w-full object-cover opacity-80 motion-reduce:hidden">
+          <source src="/img/video/fondopersona.webm" type="video/webm" />
+        </video>
+        <div className="absolute inset-0 bg-[#e9ece4]/80" aria-hidden="true" />
+        <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
           <div>
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">Por qué elegirnos</p>
             <h2 className="text-3xl font-black tracking-[-0.05em] text-slate-900 sm:text-4xl">Un alojamiento pensado para responder a la realidad de las plantas de interior.</h2>

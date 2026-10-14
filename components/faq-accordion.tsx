@@ -37,21 +37,25 @@ export function FaqAccordion() {
         const panelId = `faq-answer-${index}`
 
         return (
-          <article key={item.question} className={`rounded-2xl transition-colors duration-300 ${isOpen ? "bg-[#f0f4ed]" : "bg-white hover:bg-[#f7f9f5]"}`}>
-            <h3>
+          <article key={item.question} className="group relative isolate overflow-hidden rounded-2xl border border-white/20 shadow-sm">
+            <video autoPlay muted loop playsInline preload="none" poster={`/img/plant_${index + 1}.webp`} aria-hidden="true" tabIndex={-1} className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden">
+              <source src={`/img/video/paisaje${index + 2}.webm`} type="video/webm" />
+            </video>
+            <div className={`absolute inset-0 transition-colors duration-300 ${isOpen ? "bg-[#10241b]/65" : "bg-[#10241b]/55 group-hover:bg-[#10241b]/45"}`} aria-hidden="true" />
+            <h3 className="relative z-10">
               <button
                 id={buttonId}
                 type="button"
                 aria-expanded={isOpen}
                 aria-controls={panelId}
                 onClick={() => setOpenIndex(isOpen ? null : index)}
-                className="group flex w-full items-center gap-4 rounded-2xl px-4 py-4 text-left outline-none transition duration-200 hover:text-[#294e3b] active:scale-[0.99] focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#54765a] sm:px-5 sm:py-5"
+                className="group flex w-full items-center gap-4 rounded-2xl px-4 py-4 text-left outline-none transition duration-200 hover:bg-white/10 active:scale-[0.99] focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-white/80 sm:px-5 sm:py-5"
               >
-                <span className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl transition duration-300 ${isOpen ? "bg-[#294e3b] text-white" : "bg-[#e5ece3] text-[#41634a] group-hover:bg-[#d7e3d6]"}`}>
+                <span className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl border border-white/30 transition duration-300 ${isOpen ? "bg-white/25 text-white" : "bg-white/10 text-white group-hover:bg-white/20"}`}>
                   <Leaf className="h-4 w-4" aria-hidden="true" />
                 </span>
-                <span className="flex-1 text-sm font-semibold leading-6 text-slate-800 sm:text-base">{item.question}</span>
-                <ChevronDown className={`h-5 w-5 shrink-0 text-[#54765a] transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`} aria-hidden="true" />
+                <span className="flex-1 text-sm font-semibold leading-6 text-white drop-shadow sm:text-base">{item.question}</span>
+                <ChevronDown className={`h-5 w-5 shrink-0 text-white/90 transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`} aria-hidden="true" />
               </button>
             </h3>
             <div
@@ -59,10 +63,10 @@ export function FaqAccordion() {
               role="region"
               aria-labelledby={buttonId}
               aria-hidden={!isOpen}
-              className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out motion-reduce:transition-none ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+              className={`relative z-10 grid transition-[grid-template-rows,opacity] duration-300 ease-out motion-reduce:transition-none ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
             >
               <div className="overflow-hidden">
-                <p className="pb-5 pl-[4.25rem] pr-5 text-sm leading-7 text-slate-600 sm:pb-6 sm:pl-[4.75rem] sm:pr-8 sm:text-base">{item.answer}</p>
+                <p className="pb-5 pl-[4.25rem] pr-5 text-sm leading-7 text-white/90 drop-shadow sm:pb-6 sm:pl-[4.75rem] sm:pr-8 sm:text-base">{item.answer}</p>
               </div>
             </div>
           </article>
