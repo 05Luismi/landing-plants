@@ -109,9 +109,7 @@ export default function Page() {
       <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-[#f0f2e9]/85 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-3 py-3 sm:gap-4 sm:px-6 sm:py-4 lg:px-8">
           <a href="#inicio" aria-label="Hotel by Plants, inicio" className="flex min-w-0 items-center gap-2 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#294e3b]">
-            <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#294e3b] text-lg font-bold text-white shadow-md shadow-emerald-900/20">
-              H
-            </div>
+            <Image src="/img/logowebp.webp" alt="" aria-hidden="true" width={48} height={48} preload className="h-10 w-10 shrink-0 rounded-2xl object-cover object-center shadow-md shadow-emerald-900/20" />
             <div>
               <p className="text-base font-semibold tracking-tight sm:text-lg">Hotel by Plants</p>
             </div>
@@ -526,7 +524,7 @@ export default function Page() {
       <footer className="border-t border-slate-200 bg-white">
         <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-8 text-sm text-slate-600 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <div className="flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#294e3b] text-sm font-bold text-white">H</div>
+              <Image src="/img/logowebp.webp" alt="" aria-hidden="true" width={40} height={40} className="h-9 w-9 shrink-0 rounded-xl object-cover object-center" />
             <span className="font-semibold text-slate-900">Hotel by Plants</span>
           </div>
           <div className="flex flex-wrap gap-6">

@@ -14,6 +14,7 @@ const fontMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Hotel by Plants | Alojamiento para plantas",
+  icons: { icon: "/img/logowebp.webp", apple: "/img/logowebp.webp" },
   description:
     "Servicio de alojamiento temporal para plantas: recogida, cuidado y devolución con seguimiento visual y atención personalizada.",
 }
