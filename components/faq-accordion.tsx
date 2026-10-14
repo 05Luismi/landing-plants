@@ -37,8 +37,21 @@ export function FaqAccordion() {
         const panelId = `faq-answer-${index}`
 
         return (
-          <article key={item.question} className="group relative isolate overflow-hidden rounded-2xl border border-white/20 shadow-sm">
-            <video autoPlay muted loop playsInline preload="none" poster={`/img/plant_${index + 1}.webp`} aria-hidden="true" tabIndex={-1} className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden">
+          <article
+            key={item.question}
+            className="group relative isolate overflow-hidden rounded-2xl border border-white/20 shadow-sm"
+            onMouseEnter={(event) => {
+              void event.currentTarget.querySelector("video")?.play().catch(() => undefined)
+            }}
+            onMouseLeave={(event) => {
+              const video = event.currentTarget.querySelector("video")
+              if (video) {
+                video.pause()
+                video.currentTime = 0
+              }
+            }}
+          >
+            <video muted loop playsInline preload="none" poster={`/img/plant_${index + 1}.webp`} aria-hidden="true" tabIndex={-1} className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden">
               <source src={`/img/video/paisaje${index + 2}.webm`} type="video/webm" />
             </video>
             <div className={`absolute inset-0 transition-colors duration-300 ${isOpen ? "bg-[#10241b]/65" : "bg-[#10241b]/55 group-hover:bg-[#10241b]/45"}`} aria-hidden="true" />
