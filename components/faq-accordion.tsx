@@ -51,7 +51,8 @@ export function FaqAccordion() {
               }
             }}
           >
-            <video muted loop playsInline preload="none" poster={`/img/plant_${index + 1}.webp`} aria-hidden="true" tabIndex={-1} className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden">
+            <div aria-hidden="true" className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url("/img/plant_${index + 1}.webp")` }} />
+            <video muted loop playsInline preload="none" poster={`/img/plant_${index + 1}.webp`} aria-hidden="true" tabIndex={-1} className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100 motion-reduce:hidden">
               <source src={`/img/video/paisaje${index + 2}.webm`} type="video/webm" />
             </video>
             <div className={`absolute inset-0 transition-colors duration-300 ${isOpen ? "bg-[#10241b]/65" : "bg-[#10241b]/55 group-hover:bg-[#10241b]/45"}`} aria-hidden="true" />
