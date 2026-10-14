@@ -114,13 +114,13 @@ export default function Page() {
     <>
     <main className="overflow-x-hidden bg-[#f0f2e9] text-slate-900">
       <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-[#f0f2e9]/85 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-          <a href="#inicio" aria-label="Hotel by Plants, inicio" className="flex items-center gap-3 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#294e3b]">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-3 py-3 sm:gap-4 sm:px-6 sm:py-4 lg:px-8">
+          <a href="#inicio" aria-label="Hotel by Plants, inicio" className="flex min-w-0 items-center gap-2 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#294e3b]">
             <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#294e3b] text-lg font-bold text-white shadow-md shadow-emerald-900/20">
               H
             </div>
             <div>
-              <p className="text-lg font-semibold tracking-tight">Hotel by Plants</p>
+              <p className="text-base font-semibold tracking-tight sm:text-lg">Hotel by Plants</p>
             </div>
           </a>
 
@@ -143,8 +143,8 @@ export default function Page() {
             </nav>
           </details>
 
-          <ReservationButton className="h-auto rounded-full bg-[#294e3b] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#1c3b2c]">
-            Reservar ahora
+          <ReservationButton className="h-auto shrink-0 rounded-full bg-[#294e3b] px-3 py-2 text-xs font-semibold text-white hover:bg-[#1c3b2c] sm:px-5 sm:py-2.5 sm:text-sm">
+            <span className="sm:hidden">Reservar</span><span className="hidden sm:inline">Reservar ahora</span>
           </ReservationButton>
         </div>
       </header>
@@ -152,14 +152,14 @@ export default function Page() {
       <section id="inicio" className="relative h-auto min-h-[75vh] w-full overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url("/img/fondo%20de%20hero.webp")' }} />
         <div className="absolute inset-0 bg-gradient-to-r from-[#f0f2e9]/95 via-[#f0f2e9]/75 to-[#f0f2e9]/35" />
-        <div className="relative mx-auto grid min-h-screen max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-24">
+        <div className="relative mx-auto grid min-h-[85svh] max-w-7xl gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 lg:px-8 lg:py-20">
           <div className="flex flex-col justify-center">
             <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-emerald-200 bg-white/75 px-3 py-1.5 text-xs font-medium text-emerald-800 shadow-sm">
               <Leaf className="h-3.5 w-3.5" />
               Alojamiento temporal para plantas
             </div>
 
-            <h1 className="max-w-xl text-4xl font-black tracking-[-0.06em] text-slate-900 sm:text-5xl lg:text-6xl">
+            <h1 className="max-w-xl text-[clamp(2.35rem,6vw,3.75rem)] font-black leading-[1.05] tracking-[-0.06em] text-slate-900">
               Tu planta no se queda sola cuando te vas.
             </h1>
 
@@ -263,29 +263,37 @@ export default function Page() {
         </div>
       </section>
 
-      <section aria-label="Nuestro espacio para plantas" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">Un hogar lleno de verde</p>
-            <h2 className="text-3xl font-black tracking-[-0.05em] text-slate-900">Un espacio pensado para que estén a gusto.</h2>
+      <section aria-label="Nuestro espacio para plantas" className="bg-[#e6ece2] px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-8 flex flex-col gap-5 sm:mb-10 sm:flex-row sm:items-end sm:justify-between">
+            <div className="max-w-2xl">
+              <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-emerald-700 sm:text-sm">Un hogar lleno de verde</p>
+              <h2 className="text-balance text-3xl font-black leading-tight tracking-[-0.05em] text-slate-900 sm:text-4xl lg:text-5xl">Un espacio pensado para que est&eacute;n a gusto.</h2>
+              <p className="mt-4 max-w-xl text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">Luz natural, rincones tranquilos y cuidados adaptados a cada planta durante toda su estancia.</p>
+            </div>
+            <ReservationButton className="h-auto w-fit shrink-0 rounded-full bg-[#294e3b] px-5 py-3 text-sm font-semibold text-white shadow-md shadow-emerald-950/10 transition hover:-translate-y-0.5 hover:bg-[#1c3b2c] sm:px-6 sm:py-3.5">
+              Reserva una estancia <ArrowRight className="ml-2 h-4 w-4" />
+            </ReservationButton>
           </div>
-          <ReservationButton className="h-auto w-fit justify-start bg-transparent p-0 text-sm font-semibold text-[#294e3b] shadow-none underline underline-offset-4 hover:bg-transparent">
-            Reserva una estancia <ArrowRight className="ml-1 h-4 w-4" />
-          </ReservationButton>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          {galleryImages.map((image) => (
-            <figure key={image.src} className="overflow-hidden rounded-[1.75rem] bg-white shadow-sm">
-              <a href={image.src} target="_blank" rel="noreferrer" aria-label={`Abrir imagen: ${image.alt}`} className="group block overflow-hidden focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-[#294e3b]">
-                <Image src={image.src} alt={image.alt} width={720} height={480} sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw" className="h-64 w-full object-cover transition duration-500 group-hover:scale-105" />
-              </a>
-              {image.credit && image.creditUrl && (
-                <figcaption className="px-4 py-3 text-xs text-slate-500">
-                  Foto de <a href={image.creditUrl} target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-[#294e3b]">{image.credit}</a>
-                </figcaption>
-              )}
-            </figure>
-          ))}
+          <div className="grid gap-4 sm:grid-cols-2 xl:auto-rows-[minmax(155px,1fr)] xl:grid-cols-[1.15fr_0.85fr] xl:gap-5">
+            {galleryImages.map((image, index) => (
+              <figure key={image.src} className={`group relative isolate min-h-[230px] overflow-hidden rounded-[1.75rem] bg-[#294e3b] shadow-md shadow-emerald-950/10 sm:min-h-[270px] ${index === 0 ? "xl:row-span-3 xl:min-h-[500px]" : "xl:min-h-0"}`}>
+                <a href={image.src} target="_blank" rel="noreferrer" aria-label={`Abrir imagen: ${image.alt}`} className="absolute inset-0 block focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-[#294e3b]">
+                  <Image src={image.src} alt={image.alt} fill sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 55vw" className="object-cover transition duration-700 group-hover:scale-105" />
+                  <span className="absolute inset-0 bg-gradient-to-t from-[#12291f]/85 via-[#12291f]/10 to-transparent transition duration-300 group-hover:from-[#12291f]/75" />
+                  <span className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 sm:p-6">
+                    <span className="max-w-md text-base font-semibold leading-snug text-white drop-shadow sm:text-lg">{image.alt}</span>
+                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-white/35 bg-white/15 text-white backdrop-blur-sm transition group-hover:bg-white group-hover:text-[#294e3b]" aria-hidden="true"><ArrowRight className="h-4 w-4" /></span>
+                  </span>
+                </a>
+                {image.credit && image.creditUrl && (
+                  <figcaption className="pointer-events-none absolute right-4 top-4 rounded-full bg-[#12291f]/65 px-3 py-1.5 text-[11px] text-white/90 backdrop-blur-sm">
+                    Foto: <a href={image.creditUrl} target="_blank" rel="noreferrer" className="pointer-events-auto underline underline-offset-2 hover:text-white">{image.credit}</a>
+                  </figcaption>
+                )}
+              </figure>
+            ))}
+          </div>
         </div>
       </section>
 

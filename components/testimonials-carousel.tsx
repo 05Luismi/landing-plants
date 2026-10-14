@@ -59,7 +59,7 @@ export function TestimonialsCarousel() {
     if (isPaused) return
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % testimonials.length)
-    }, 5000)
+    }, 1000)
     return () => window.clearInterval(timer)
   }, [isPaused])
 
