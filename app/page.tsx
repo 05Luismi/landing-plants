@@ -145,14 +145,14 @@ export default function Page() {
           <source src="/img/video/paisaje1.webm" type="video/webm" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-[#f0f2e9]/90 via-[#f0f2e9]/65 to-[#f0f2e9]/25" />
-        <div className="relative mx-auto grid min-h-[70svh] max-w-7xl gap-10 sm:min-h-[76svh] lg:min-h-[clamp(38rem,84svh,54rem)] px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 lg:px-8 lg:py-20">
+        <div className="relative mx-auto grid min-h-[70svh] max-w-[min(92vw,90rem)] gap-10 sm:min-h-[76svh] lg:min-h-[clamp(38rem,84svh,54rem)] px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-[clamp(2rem,4vw,4rem)] lg:px-8 lg:py-20">
           <div className="flex flex-col justify-center">
             <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-emerald-200 bg-white/75 px-3 py-1.5 text-xs font-medium text-emerald-800 shadow-sm">
               <Leaf className="h-3.5 w-3.5" />
               Alojamiento temporal para plantas
             </div>
 
-            <h1 className="max-w-xl text-[clamp(2.35rem,6vw,3.75rem)] font-black leading-[1.05] tracking-[-0.06em] text-slate-900">
+            <h1 className="max-w-[clamp(34rem,44vw,48rem)] text-[clamp(2.5rem,4.8vw,4.5rem)] font-black leading-[1.05] tracking-[-0.06em] text-slate-900">
               Tu planta no se queda sola cuando te vas.
             </h1>
 
@@ -187,7 +187,7 @@ export default function Page() {
             <div className="absolute left-8 top-10 h-32 w-32 rounded-full bg-emerald-200/60 blur-3xl" />
             <div className="absolute bottom-8 right-8 h-28 w-28 rounded-full bg-lime-200/70 blur-3xl" />
 
-            <div className="relative w-full max-w-lg rounded-[2rem] border border-emerald-100 bg-[#f8faf4] p-4 shadow-[0_30px_80px_rgba(36,75,58,0.16)]">
+            <div className="relative w-full max-w-[clamp(28rem,34vw,38rem)] rounded-[2rem] border border-emerald-100 bg-[#f8faf4] p-4 shadow-[0_30px_80px_rgba(36,75,58,0.16)]">
               <div className="rounded-[1.5rem] bg-[linear-gradient(135deg,#eef2e8_0%,#e5ece3_45%,#dfe8dd_100%)] p-5">
                 <div className="flex items-center justify-between">
                   <span className="rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-emerald-800">
