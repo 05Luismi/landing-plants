@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useState, type KeyboardEvent, type PointerEvent } from "react"
+import { useEffect, useRef, useState, type KeyboardEvent, type PointerEvent } from "react"
 import { ArrowLeft, ArrowRight, Star } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -51,8 +51,17 @@ const testimonials = [
 
 export function TestimonialsCarousel() {
   const [activeIndex, setActiveIndex] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
   const pointerStart = useRef<number | null>(null)
   const active = testimonials[activeIndex]
+
+  useEffect(() => {
+    if (isPaused) return
+    const timer = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1) % testimonials.length)
+    }, 5000)
+    return () => window.clearInterval(timer)
+  }, [isPaused])
 
   function showPrevious() {
     setActiveIndex((current) => (current - 1 + testimonials.length) % testimonials.length)
@@ -89,6 +98,12 @@ export function TestimonialsCarousel() {
       aria-roledescription="carrusel"
       aria-label="Opiniones de clientes"
       tabIndex={0}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onFocus={() => setIsPaused(true)}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setIsPaused(false)
+      }}
       onKeyDown={handleKeyDown}
       onPointerDown={(event) => { pointerStart.current = event.clientX }}
       onPointerUp={handlePointerUp}
