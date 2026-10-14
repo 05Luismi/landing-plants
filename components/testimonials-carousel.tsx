@@ -100,7 +100,7 @@ export function TestimonialsCarousel() {
         size="icon-lg"
         onClick={showPrevious}
         aria-label="Ver opinión anterior"
-        className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full border border-emerald-900/10 bg-white/90 text-[#1b6a4a] opacity-25 shadow-md transition-all duration-300 hover:scale-105 hover:bg-white hover:text-[#1b6a4a] hover:opacity-100 focus-visible:opacity-100 group-hover/carousel:opacity-100"
+        className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full border border-emerald-900/10 bg-white/90 text-[#294e3b] opacity-25 shadow-md transition-all duration-300 hover:scale-105 hover:bg-white hover:text-[#294e3b] hover:opacity-100 focus-visible:opacity-100 group-hover/carousel:opacity-100"
       >
         <ArrowLeft aria-hidden="true" />
       </Button>
@@ -128,7 +128,7 @@ export function TestimonialsCarousel() {
         size="icon-lg"
         onClick={showNext}
         aria-label="Ver opinión siguiente"
-        className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full border border-emerald-900/10 bg-white/90 text-[#1b6a4a] opacity-25 shadow-md transition-all duration-300 hover:scale-105 hover:bg-white hover:text-[#1b6a4a] hover:opacity-100 focus-visible:opacity-100 group-hover/carousel:opacity-100"
+        className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full border border-emerald-900/10 bg-white/90 text-[#294e3b] opacity-25 shadow-md transition-all duration-300 hover:scale-105 hover:bg-white hover:text-[#294e3b] hover:opacity-100 focus-visible:opacity-100 group-hover/carousel:opacity-100"
       >
         <ArrowRight aria-hidden="true" />
       </Button>
@@ -141,7 +141,7 @@ export function TestimonialsCarousel() {
             onClick={() => setActiveIndex(index)}
             aria-label={`Ver opinión ${index + 1} de ${testimonials.length}`}
             aria-current={index === activeIndex ? "true" : undefined}
-            className={`h-2.5 rounded-full transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1b6a4a] ${index === activeIndex ? "w-7 bg-[#1b6a4a]" : "w-2.5 bg-emerald-900/20 hover:bg-emerald-700/50"}`}
+            className={`h-2.5 rounded-full transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#294e3b] ${index === activeIndex ? "w-7 bg-[#294e3b]" : "w-2.5 bg-emerald-900/20 hover:bg-emerald-700/50"}`}
           />
         ))}
         <span className="sr-only">Opinión {activeIndex + 1} de {testimonials.length}</span>

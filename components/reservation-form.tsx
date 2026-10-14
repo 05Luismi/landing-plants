@@ -83,10 +83,10 @@ export function ReservationForm() {
       </label>
       <div className="flex flex-col gap-4 md:col-span-2 sm:flex-row sm:items-center sm:justify-between">
         <p aria-live="polite" className="text-sm text-slate-600">
-          Desde <strong className="text-lg text-[#1b6a4a]">{estimate} €</strong>
+          Desde <strong className="text-lg text-[#294e3b]">{estimate} €</strong>
           <span className="block text-xs">El precio final depende de la cantidad, duración y cuidados.</span>
         </p>
-        <Button type="submit" className="h-auto rounded-full bg-[#1b6a4a] px-6 py-3 font-semibold text-white hover:bg-[#14573b]">
+        <Button type="submit" className="h-auto rounded-full bg-[#294e3b] px-6 py-3 font-semibold text-white hover:bg-[#1c3b2c]">
           Preparar solicitud
         </Button>
       </div>

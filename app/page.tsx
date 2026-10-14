@@ -112,11 +112,11 @@ const galleryImages: Array<{
 export default function Page() {
   return (
     <>
-    <main className="overflow-x-hidden bg-[#f7f4ee] text-slate-900">
-      <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-[#f7f4ee]/80 backdrop-blur-xl">
+    <main className="overflow-x-hidden bg-[#f0f2e9] text-slate-900">
+      <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-[#f0f2e9]/85 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-          <a href="#inicio" aria-label="Hotel by Plants, inicio" className="flex items-center gap-3 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1b6a4a]">
-            <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#1b6a4a] text-lg font-bold text-white shadow-md shadow-emerald-900/20">
+          <a href="#inicio" aria-label="Hotel by Plants, inicio" className="flex items-center gap-3 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#294e3b]">
+            <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#294e3b] text-lg font-bold text-white shadow-md shadow-emerald-900/20">
               H
             </div>
             <div>
@@ -133,7 +133,7 @@ export default function Page() {
           </nav>
 
           <details className="group relative md:hidden">
-            <summary className="cursor-pointer list-none rounded-full border border-emerald-900/15 bg-white/80 px-4 py-2 text-sm font-semibold text-[#1b6a4a] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1b6a4a]">Menú</summary>
+            <summary className="cursor-pointer list-none rounded-full border border-emerald-900/15 bg-white/80 px-4 py-2 text-sm font-semibold text-[#294e3b] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#294e3b]">Menú</summary>
             <nav className="absolute right-0 top-full mt-3 grid min-w-48 gap-1 rounded-2xl border border-slate-200 bg-white p-2 text-sm text-slate-700 shadow-xl">
               <a className="rounded-xl px-3 py-2 hover:bg-emerald-50" href="#como-funciona">Cómo funciona</a>
               <a className="rounded-xl px-3 py-2 hover:bg-emerald-50" href="#beneficios">Beneficios</a>
@@ -143,7 +143,7 @@ export default function Page() {
             </nav>
           </details>
 
-          <ReservationButton className="h-auto rounded-full bg-[#1b6a4a] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#14573b]">
+          <ReservationButton className="h-auto rounded-full bg-[#294e3b] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#1c3b2c]">
             Reservar ahora
           </ReservationButton>
         </div>
@@ -151,10 +151,10 @@ export default function Page() {
 
       <section id="inicio" className="relative h-auto min-h-[75vh] w-full overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url("/img/fondo%20de%20hero.webp")' }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#f7f4ee]/95 via-[#f7f4ee]/75 to-[#f7f4ee]/35" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#f0f2e9]/95 via-[#f0f2e9]/75 to-[#f0f2e9]/35" />
         <div className="relative mx-auto grid min-h-screen max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-24">
           <div className="flex flex-col justify-center">
-            <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-emerald-200 bg-white/70 px-3 py-1.5 text-xs font-medium text-emerald-800 shadow-sm">
+            <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-emerald-200 bg-white/75 px-3 py-1.5 text-xs font-medium text-emerald-800 shadow-sm">
               <Leaf className="h-3.5 w-3.5" />
               Alojamiento temporal para plantas
             </div>
@@ -169,11 +169,11 @@ export default function Page() {
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <ReservationButton className="h-auto rounded-full bg-[#1b6a4a] px-6 py-4 text-base font-semibold text-white hover:bg-[#14573b]">
+              <ReservationButton className="h-auto rounded-full bg-[#294e3b] px-6 py-4 text-base font-semibold text-white hover:bg-[#1c3b2c]">
                 Solicitar estancia
                 <ArrowRight className="ml-2 h-4 w-4" />
               </ReservationButton>
-              <a href="#planes" className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white/80 px-6 py-4 text-base font-semibold text-slate-700 transition hover:bg-slate-50">
+              <a href="#planes" className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white/85 px-6 py-4 text-base font-semibold text-slate-700 transition hover:bg-slate-50">
                 Ver planes
               </a>
             </div>
@@ -194,8 +194,8 @@ export default function Page() {
             <div className="absolute left-8 top-10 h-32 w-32 rounded-full bg-emerald-200/60 blur-3xl" />
             <div className="absolute bottom-8 right-8 h-28 w-28 rounded-full bg-lime-200/70 blur-3xl" />
 
-            <div className="relative w-full max-w-lg rounded-[2rem] border border-emerald-100 bg-[#fffdf9] p-4 shadow-[0_30px_80px_rgba(27,106,74,0.14)]">
-              <div className="rounded-[1.5rem] bg-[linear-gradient(135deg,#f1f9ef_0%,#ebf7ef_22%,#e8f3ed_100%)] p-5">
+            <div className="relative w-full max-w-lg rounded-[2rem] border border-emerald-100 bg-[#f8faf4] p-4 shadow-[0_30px_80px_rgba(36,75,58,0.16)]">
+              <div className="rounded-[1.5rem] bg-[linear-gradient(135deg,#eef2e8_0%,#e5ece3_45%,#dfe8dd_100%)] p-5">
                 <div className="flex items-center justify-between">
                   <span className="rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-emerald-800">
                     Plant care home
@@ -233,11 +233,11 @@ export default function Page() {
                 </div>
 
                 <div className="mt-6 grid grid-cols-2 gap-3 text-center">
-                  <div className="rounded-2xl bg-[#1b6a4a] p-4 text-white shadow-lg shadow-emerald-900/20">
+                  <div className="rounded-2xl bg-[#294e3b] p-4 text-white shadow-lg shadow-emerald-900/20">
                     <p className="text-2xl font-black">120+</p>
                     <p className="text-xs text-emerald-50">plantas cuidadas</p>
                   </div>
-                  <div className="rounded-2xl bg-[#edf5d5] p-4 text-slate-800">
+                  <div className="rounded-2xl bg-[#dfe6bd] p-4 text-slate-800">
                     <p className="text-2xl font-black">99%</p>
                     <p className="text-xs text-slate-600">satisfacción</p>
                   </div>
@@ -255,8 +255,8 @@ export default function Page() {
             { value: "24h", label: "respuesta a reservas" },
             { value: "4.9/5", label: "valoración media" },
           ].map((item) => (
-            <div key={item.label} className="rounded-2xl bg-[#f6f9f2] p-5 text-center">
-              <p className="text-3xl font-black text-[#1b6a4a]">{item.value}</p>
+            <div key={item.label} className="rounded-2xl bg-[#edf1e8] p-5 text-center">
+              <p className="text-3xl font-black text-[#294e3b]">{item.value}</p>
               <p className="mt-1 text-sm text-slate-600">{item.label}</p>
             </div>
           ))}
@@ -269,19 +269,19 @@ export default function Page() {
             <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">Un hogar lleno de verde</p>
             <h2 className="text-3xl font-black tracking-[-0.05em] text-slate-900">Un espacio pensado para que estén a gusto.</h2>
           </div>
-          <ReservationButton className="h-auto w-fit justify-start bg-transparent p-0 text-sm font-semibold text-[#1b6a4a] shadow-none underline underline-offset-4 hover:bg-transparent">
+          <ReservationButton className="h-auto w-fit justify-start bg-transparent p-0 text-sm font-semibold text-[#294e3b] shadow-none underline underline-offset-4 hover:bg-transparent">
             Reserva una estancia <ArrowRight className="ml-1 h-4 w-4" />
           </ReservationButton>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {galleryImages.map((image) => (
             <figure key={image.src} className="overflow-hidden rounded-[1.75rem] bg-white shadow-sm">
-              <a href={image.src} target="_blank" rel="noreferrer" aria-label={`Abrir imagen: ${image.alt}`} className="group block overflow-hidden focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-[#1b6a4a]">
+              <a href={image.src} target="_blank" rel="noreferrer" aria-label={`Abrir imagen: ${image.alt}`} className="group block overflow-hidden focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-[#294e3b]">
                 <Image src={image.src} alt={image.alt} width={720} height={480} sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw" className="h-64 w-full object-cover transition duration-500 group-hover:scale-105" />
               </a>
               {image.credit && image.creditUrl && (
                 <figcaption className="px-4 py-3 text-xs text-slate-500">
-                  Foto de <a href={image.creditUrl} target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-[#1b6a4a]">{image.credit}</a>
+                  Foto de <a href={image.creditUrl} target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-[#294e3b]">{image.credit}</a>
                 </figcaption>
               )}
             </figure>
@@ -304,7 +304,7 @@ export default function Page() {
                 <CardHeader className="p-0">
                   <div className="mb-5 flex items-center justify-between">
                   <span className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">{step.number}</span>
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#edf5d5] text-sm font-bold text-[#1b6a4a]">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#dfe6bd] text-sm font-bold text-[#294e3b]">
                     <ChevronRight className="h-4 w-4" />
                   </div>
                   </div>
@@ -317,7 +317,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="beneficios" className="h-auto w-full bg-[#eef5eb] py-20">
+      <section id="beneficios" className="h-auto w-full bg-[#e6ece2] py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 max-w-2xl">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">Más que un hotel</p>
@@ -327,7 +327,7 @@ export default function Page() {
           </div>
 
           <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="rounded-[2rem] bg-[#1b6a4a] p-8 text-white shadow-xl shadow-emerald-900/10">
+            <div className="rounded-[2rem] bg-[#294e3b] p-8 text-white shadow-xl shadow-emerald-900/10">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-100">Nuestra promesa</p>
               <h3 className="mt-4 text-3xl font-black tracking-[-0.05em]">Plantas sanas, hogar tranquilo.</h3>
               <p className="mt-5 leading-7 text-emerald-50/90">
@@ -350,7 +350,7 @@ export default function Page() {
                 const Icon = reason.icon
                 return (
                   <Card key={reason.title} className="h-full rounded-[2rem] border-0 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#edf5d5] text-[#1b6a4a]">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#dfe6bd] text-[#294e3b]">
                       <Icon className="h-6 w-6" />
                     </div>
                     <CardHeader className="p-0 pt-3"><CardTitle className="text-xl font-bold text-slate-900">{reason.title}</CardTitle></CardHeader>
@@ -376,7 +376,7 @@ export default function Page() {
                 key={pkg.name}
                 className={[
                   "h-full rounded-[2rem] border-0 p-6 shadow-sm ring-0 transition duration-300 hover:-translate-y-1 hover:shadow-xl",
-                  pkg.featured ? "border-emerald-600 bg-[#1b6a4a] text-white shadow-lg shadow-emerald-900/20" : "border-slate-200 bg-white text-slate-900",
+                  pkg.featured ? "border-emerald-600 bg-[#294e3b] text-white shadow-lg shadow-emerald-900/20" : "border-slate-200 bg-white text-slate-900",
                 ].join(" ")}
               >
                 <p className={pkg.featured ? "text-emerald-100" : "text-slate-500"}>{pkg.name}</p>
@@ -390,7 +390,7 @@ export default function Page() {
                         className={
                           pkg.featured
                             ? "flex h-6 w-6 items-center justify-center rounded-full bg-emerald-200 text-emerald-900"
-                            : "flex h-6 w-6 items-center justify-center rounded-full bg-[#edf5d5] text-[#1b6a4a]"
+                            : "flex h-6 w-6 items-center justify-center rounded-full bg-[#dfe6bd] text-[#294e3b]"
                         }
                       >
                         <Check className="h-4 w-4" />
@@ -400,7 +400,7 @@ export default function Page() {
                   ))}
                 </ul>
 
-                <ReservationButton className={`mt-8 h-auto w-full rounded-full px-5 py-3 font-semibold ${pkg.featured ? "bg-white text-[#1b6a4a] hover:bg-emerald-50" : "bg-[#1b6a4a] text-white hover:bg-[#14573b]"}`}>
+                <ReservationButton className={`mt-8 h-auto w-full rounded-full px-5 py-3 font-semibold ${pkg.featured ? "bg-white text-[#294e3b] hover:bg-emerald-50" : "bg-[#294e3b] text-white hover:bg-[#1c3b2c]"}`}>
                   Reservar
                 </ReservationButton>
               </Card>
@@ -409,7 +409,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="h-auto w-full bg-[#f2efe8] py-20">
+      <section className="h-auto w-full bg-[#e9ece4] py-20">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
           <div>
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">Por qué elegirnos</p>
@@ -434,7 +434,7 @@ export default function Page() {
           </div>
 
           <div className="rounded-[2rem] bg-white p-6 shadow-lg shadow-slate-200/80">
-            <div className="rounded-[1.5rem] bg-[linear-gradient(160deg,#eaf7ed_0%,#f7f5ee_100%)] p-6">
+            <div className="rounded-[1.5rem] bg-[linear-gradient(160deg,#e2ebe1_0%,#f0f2e9_100%)] p-6">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">Estadísticas</p>
               <div className="mt-6 space-y-5">
                 <div>
@@ -443,7 +443,7 @@ export default function Page() {
                     <span className="font-semibold text-slate-800">96%</span>
                   </div>
                   <div className="h-2.5 rounded-full bg-emerald-100">
-                    <div className="h-2.5 w-[96%] rounded-full bg-[#1b6a4a]" />
+                    <div className="h-2.5 w-[96%] rounded-full bg-[#294e3b]" />
                   </div>
                 </div>
                 <div>
@@ -452,7 +452,7 @@ export default function Page() {
                     <span className="font-semibold text-slate-800">24h</span>
                   </div>
                   <div className="h-2.5 rounded-full bg-emerald-100">
-                    <div className="h-2.5 w-[88%] rounded-full bg-[#6d8b3d]" />
+                    <div className="h-2.5 w-[88%] rounded-full bg-[#65764f]" />
                   </div>
                 </div>
                 <div>
@@ -461,7 +461,7 @@ export default function Page() {
                     <span className="font-semibold text-slate-800">71%</span>
                   </div>
                   <div className="h-2.5 rounded-full bg-emerald-100">
-                    <div className="h-2.5 w-[71%] rounded-full bg-[#a5b64d]" />
+                    <div className="h-2.5 w-[71%] rounded-full bg-[#8c9568]" />
                   </div>
                 </div>
               </div>
@@ -481,7 +481,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="faq" className="h-auto w-full bg-[#f4f8f0] py-20">
+      <section id="faq" className="h-auto w-full bg-[#e9efe5] py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10 text-center">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">FAQ</p>
@@ -517,14 +517,14 @@ export default function Page() {
       </section>
 
       <section id="cta" className="mx-auto flex h-auto w-full items-center px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto w-full max-w-7xl rounded-[2.5rem] bg-[linear-gradient(135deg,#173e2f_0%,#1b6a4a_45%,#6d8b3d_100%)] p-8 text-white shadow-[0_30px_70px_rgba(23,62,47,0.28)] sm:p-10 lg:p-14">
+        <div className="mx-auto w-full max-w-7xl rounded-[2.5rem] bg-[linear-gradient(135deg,#142f24_0%,#294e3b_52%,#65764f_100%)] p-8 text-white shadow-[0_30px_70px_rgba(20,47,36,0.3)] sm:p-10 lg:p-14">
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-100">Reserva tu plaza</p>
               <h2 className="mt-3 max-w-xl text-3xl font-black tracking-[-0.06em] sm:text-4xl">Deja tus plantas en manos expertas y disfruta del viaje sin preocupaciones.</h2>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-              <ReservationButton className="h-auto rounded-full bg-white px-6 py-4 text-base font-semibold text-[#1b6a4a] hover:bg-emerald-50">
+              <ReservationButton className="h-auto rounded-full bg-white px-6 py-4 text-base font-semibold text-[#294e3b] hover:bg-emerald-50">
                 Solicitar información
               </ReservationButton>
               <ReservationButton className="h-auto rounded-full border-white/40 bg-white/5 px-6 py-4 text-base font-semibold text-white hover:bg-white/10">
@@ -538,7 +538,7 @@ export default function Page() {
       <footer className="border-t border-slate-200 bg-white">
         <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-8 text-sm text-slate-600 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#1b6a4a] text-sm font-bold text-white">H</div>
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#294e3b] text-sm font-bold text-white">H</div>
             <span className="font-semibold text-slate-900">Hotel by Plants</span>
           </div>
           <div className="flex flex-wrap gap-6">
