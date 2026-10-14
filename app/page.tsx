@@ -14,6 +14,7 @@ import {
 import Image from "next/image"
 
 import { ReservationForm } from "@/components/reservation-form"
+import { FaqAccordion } from "@/components/faq-accordion"
 import { ReservationButton } from "@/components/reservation-button"
 import { ReservationRain } from "@/components/reservation-rain"
 import { TestimonialsCarousel } from "@/components/testimonials-carousel"
@@ -82,14 +83,6 @@ const reasons = [
     title: "Seguimiento visual",
     text: "Cada cliente recibe fotografías para comprobar el estado de sus plantas y dormir tranquilo.",
   },
-]
-
-const faqs = [
-  "¿Qué tipos de plantas aceptan?",
-  "¿Cómo se realiza la recogida?",
-  "¿Me mandáis fotos durante la estancia?",
-  "¿Qué pasa si una planta necesita cuidados especiales?",
-  "¿Cuánto dura la estancia típica?",
 ]
 
 const galleryImages: Array<{
@@ -496,20 +489,7 @@ export default function Page() {
             <h2 className="text-3xl font-black tracking-[-0.05em] text-slate-900 sm:text-4xl">Preguntas frecuentes</h2>
           </div>
 
-          <div className="space-y-4">
-            {faqs.map((question, index) => (
-              <details key={question} open={index === 0} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                <summary className="cursor-pointer list-none text-lg font-semibold text-slate-900">{question}</summary>
-                <p className="mt-3 text-slate-600">
-                  {index === 0 && "Aceptamos la mayoría de plantas de interior y algunas exteriores siempre que estén en buen estado y con una especie compatible con el espacio de alojamiento."}
-                  {index === 1 && "El proceso es muy simple: reservas la estancia, te contactamos para confirmar la recogida y te entregamos la planta en un punto acordado o a domicilio según el servicio contratado."}
-                  {index === 2 && "Sí. Durante la estancia te enviamos fotos de tu planta con información sobre estado, humedad y cuidados, para que puedas verla sin salir de casa."}
-                  {index === 3 && "Para plantas muy especiales o sensibles, diseñamos un plan específico con revisiones adicionales y recomendaciones personalizadas."}
-                  {index === 4 && "La estancia puede durar desde unos pocos días hasta varias semanas, y también ofrecemos planes largos para viajes de mayor duración."}
-                </p>
-              </details>
-            ))}
-          </div>
+          <FaqAccordion />
         </div>
       </section>
 
