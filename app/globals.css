@@ -34,6 +34,21 @@
   will-change: transform, opacity;
 }
 
+.testimonial-slide {
+  animation: testimonial-enter 280ms ease-out both;
+}
+
+@keyframes testimonial-enter {
+  from {
+    opacity: 0;
+    transform: translateX(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 @keyframes cannabis-rain-fall {
   0% {
     opacity: 0;
@@ -62,6 +77,9 @@
     --leaf-sway: 0px !important;
     --leaf-spin: 0deg !important;
     animation-duration: 1.2s !important;
+  }
+  .testimonial-slide {
+    animation: none;
   }
 }
 

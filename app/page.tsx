@@ -16,6 +16,7 @@ import Image from "next/image"
 import { ReservationForm } from "@/components/reservation-form"
 import { ReservationButton } from "@/components/reservation-button"
 import { ReservationRain } from "@/components/reservation-rain"
+import { TestimonialsCarousel } from "@/components/testimonials-carousel"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 const benefitPoints = [
@@ -80,27 +81,6 @@ const reasons = [
     icon: Camera,
     title: "Seguimiento visual",
     text: "Cada cliente recibe fotografías para comprobar el estado de sus plantas y dormir tranquilo.",
-  },
-]
-
-const testimonials = [
-  {
-    quote:
-      "Nos fuimos dos semanas y volvimos con nuestras plantas perfectas. Fue una tranquilidad enorme y el seguimiento visual nos encantó.",
-    author: "Laura M.",
-    detail: "Apartamento en Barcelona",
-  },
-  {
-    quote:
-      "La reserva fue súper fácil y la comunicación mucho más cercana de lo que esperaba. Un servicio útil y muy bien pensado.",
-    author: "Mario P.",
-    detail: "Propietario de jardín urbano",
-  },
-  {
-    quote:
-      "Tienen un trato muy cuidado con cada planta. Para especies más delicadas, la atención premium ha sido imprescindible.",
-    author: "Elena G.",
-    detail: "Dueña de plantas de interior",
   },
 ]
 
@@ -497,22 +477,7 @@ export default function Page() {
             <h2 className="text-3xl font-black tracking-[-0.05em] text-slate-900 sm:text-4xl">La tranquilidad de quienes se fueron y las devolvieron felices.</h2>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-3">
-            {testimonials.map((item) => (
-              <Card key={item.author} className="h-full rounded-[2rem] border-0 bg-white p-6 shadow-sm ring-0 transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-                <div className="mb-4 flex gap-1 text-amber-400">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-current" />
-                  ))}
-                </div>
-                <p className="text-lg leading-8 text-slate-700">“{item.quote}”</p>
-                <div className="mt-6 border-t border-slate-200 pt-4">
-                  <p className="font-bold text-slate-900">{item.author}</p>
-                  <p className="text-sm text-slate-500">{item.detail}</p>
-                </div>
-              </Card>
-            ))}
-          </div>
+          <TestimonialsCarousel />
         </div>
       </section>
 
