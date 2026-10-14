@@ -5,25 +5,25 @@ import { ChevronDown, Leaf } from "lucide-react"
 
 const questions = [
   {
-    question: "¿Qué tipos de plantas aceptan?",
-    answer: "Aceptamos la mayoría de plantas de interior y algunas especies de exterior, siempre que estén en buen estado y sean compatibles con el espacio de alojamiento.",
+    "question": "\u00bfQu\u00e9 tipos de plantas aceptan?",
+    "answer": "Aceptamos la mayor\u00eda de plantas de interior y algunas especies de exterior, siempre que est\u00e9n en buen estado y sean compatibles con el espacio de alojamiento."
   },
   {
-    question: "¿Cómo se realiza la recogida?",
-    answer: "Reservas la estancia y coordinamos contigo la recogida. Podemos recoger tus plantas en casa o acordar un punto de entrega, según el servicio contratado.",
+    "question": "\u00bfC\u00f3mo se realiza la recogida?",
+    "answer": "Reservas la estancia y coordinamos contigo la recogida. Podemos recoger tus plantas en casa o acordar un punto de entrega, seg\u00fan el servicio contratado."
   },
   {
-    question: "¿Me mandáis fotos durante la estancia?",
-    answer: "Sí. Te enviamos fotos y actualizaciones para que puedas ver cómo está tu planta y conocer los cuidados que recibe.",
+    "question": "\u00bfMe mand\u00e1is fotos durante la estancia?",
+    "answer": "S\u00ed. Te enviamos fotos y actualizaciones para que puedas ver c\u00f3mo est\u00e1 tu planta y conocer los cuidados que recibe."
   },
   {
-    question: "¿Qué pasa si una planta necesita cuidados especiales?",
-    answer: "Preparamos un plan de cuidados adaptado a cada especie y podemos hacer revisiones adicionales para plantas delicadas o con necesidades concretas.",
+    "question": "\u00bfQu\u00e9 pasa si una planta necesita cuidados especiales?",
+    "answer": "Preparamos un plan de cuidados adaptado a cada especie y podemos hacer revisiones adicionales para plantas delicadas o con necesidades concretas."
   },
   {
-    question: "¿Cuánto dura la estancia típica?",
-    answer: "La estancia puede durar desde unos pocos días hasta varias semanas. También podemos organizar estancias más largas para viajes prolongados.",
-  },
+    "question": "\u00bfCu\u00e1nto dura la estancia t\u00edpica?",
+    "answer": "La estancia puede durar desde unos pocos d\u00edas hasta varias semanas. Tambi\u00e9n podemos organizar estancias m\u00e1s largas para viajes prolongados."
+  }
 ]
 
 export function FaqAccordion() {
